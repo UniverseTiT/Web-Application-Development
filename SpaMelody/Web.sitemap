@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode title="SpaMelody">
+	<siteMapNode url="Home.aspx" title="Home"  description="">
+		<siteMapNode url="Service.aspx" title="Service"  description="" />
+		<siteMapNode url="~/Member/Booking.aspx" title="Booking"  description="" >
+			<siteMapNode url="~/Member/Payment.aspx" title="Payment"  description="">
+				<siteMapNode url="~/Member/PaymentSuccess.aspx" title="PaymentSuccess" description="" />
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode url="~/Profile/Profile.aspx" title="Profile"  description=""/>
+			<siteMapNode url="~/Member/BookingHistory.aspx" title="BookingHistory"  description="">
+				<siteMapNode url="~/Member/RateComment.aspx" title="RateComment" description=""/>
+		</siteMapNode>
+		<siteMapNode url="AboutUs.aspx" title="About Us"  description="" />
+	</siteMapNode>
+	  <siteMapNode url="~/Admin/AdminDashboard.aspx" title="AdminDashboard"  description="">
+		  <siteMapNode url="~/Admin/ServiceManagement.aspx" title="ServiceManagement" description="">
+			  <siteMapNode url="~/Admin/AddService.aspx" title="AddService" description=""/>
+			  <siteMapNode url="~/Admin/EditService.aspx" title="EditService" description="" />
+		  </siteMapNode>
+		  <siteMapNode url="~/Admin/BookingList.aspx" title="BookingList" description="" />
+		  <siteMapNode url="~/Admin/CustomerList.aspx" title="CustomerList" description="" />
+		  <siteMapNode url="~/Admin/AdminProfile.aspx" title="AdminProfile" description="" />
+		  <siteMapNode url="~/Admin/ReportGenerator.aspx" title="ReportGenerator" description="">
+			  <siteMapNode url="~/Admin/Report.aspx" title="Report" />
+		  </siteMapNode>
+	  </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MelodySpa.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        a {
+            color: #D4C19A;
+        }
+
+        li {
+            padding-right: 2%;
+        }
+
+        ul {
+            display: inline;
+            list-style-type: none;
+        }
+
+        .nav-bar {
+            display: flex;
+            margin: 0px;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+            li a:hover {
+                color: #3498db;
+            }
+
+        .active {
+            color: #3498db;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loginLogout {
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .contact-info-section {
+            width: 30%;
+            border-top: solid 1px #D4C19A;
+            opacity: 0;
+            animation: slideIn 1s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #403630; margin: 0%">
+    <form id="form1" runat="server">
+        <div>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="padding: 1%; border-bottom: solid 1px #D4C19A; vertical-align: middle;" colspan="3">
+                        <ul class="nav-bar">
+                            <li class="nav-item">
+                                <div style="align-items: center; display: flex;">
+                                    <asp:Image ID="Image4" runat="server" Style="margin-right: auto;" ImageUrl="~/Images/Logo.png" Height="58px" Width="67px" />
+                                    <asp:Label ID="Label1" runat="server" Text=" SpaMelody" ForeColor="#D4C19A" Font-Size="36px" Font-Bold="True"></asp:Label>
+                                </div>
+                            </li>
+                            <li style="margin-left: auto; font-size: 20px"><a href="\Home.aspx" class="nav-link" id="home">HOME</a></li>
+                            <li><a href="\Service.aspx" style="font-size: 20px" id="service">SERVICE</a></li>
+                            <li><a href="<%= ResolveUrl("~/Member/Booking.aspx") %>" style="font-size: 20px" id="booking">BOOKING</a></li>
+                            <li><a href="<%= ResolveUrl("~/Member/BookingHistory.aspx") %>" style="font-size: 20px" id="bookinghistory">BOOKING HISTORY</a></li>
+                            <li><a href="<%= ResolveUrl("~/Member/Profile.aspx") %>" style="font-size: 20px" id="profile">PROFILE</a></li>
+                            <li><a href="\AboutUs.aspx" style="font-size: 20px" id="aboutus">ABOUT US</a></li>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/Login.aspx" LoginImageUrl="\Images\Login1.png" LogoutImageUrl="\Images\Logout1.png" CssClass="loginLogout" LogoutAction="Redirect" />
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="color: #D4C19A; border-bottom: solid 1px #D4C19A;">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                        </asp:SiteMapPath>
+                    </td>
+                </tr>
+                <tr>
+                    <%-- <td  style="border-bottom: solid 1px #D4C19A; border-right: solid 1px #D4C19A;">
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" Style="background-color: #403630; color: #D4C19A;">
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </td>
+                    <td style="width: 80%; background-color: #2D2625; color: white; padding: 2.5%;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>--%>
+                    <td style="width: 80%; background-color: #2D2625; color: white; padding: 2.5%;" colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <%--<tr>
+                    <td  colspan="2" style="border-top: solid 1px #D4C19A;">
+                        <table>--%>
+                <tr class="contact-info-section">
+                    <td colspan="3" style="width: 30%; border-top: solid 1px #D4C19A;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 30%;">
+                                    <div style="border: 1px solid #D4C19A; margin: 5px; padding: 5px; display: flex; align-items: center;">
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="\Icon\PhoneIcon.png" />
+                                        <div style="display: inline-block;">
+                                            <asp:Label ID="Label2" runat="server" Text="Call Us" ForeColor="#D4C19A"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="Label5" runat="server" Text="1300-88-2525" ForeColor="White"></asp:Label>
+                                        </div>
+
+
+
+                                    </div>
+                                </td>
+                                <td style="width: 30%">
+                                    <div style="border: 1px solid #D4C19A; padding: 5px; margin: 5px; display: flex; align-items: center;">
+                                        <asp:Image ID="Image2" runat="server" ImageUrl="\Icon\EmailIcon.png" Style="margin-left: 2px; margin-right: 5px;" />
+                                        <div style="display: inline-block;">
+                                            <asp:Label ID="Label3" runat="server" Text="Email Us" ForeColor="#D4C19A"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="Label6" runat="server" Text="tanws-wm21@student.tarc.edu.my" ForeColor="White"></asp:Label>
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td style="width: 30%">
+                                    <div style="border: 1px solid #D4C19A; padding: 5px; margin: 5px; display: flex; align-items: center;">
+                                        <asp:Image ID="Image3" runat="server" ImageUrl="\Icon\LocationIcon.png" />
+                                        <div style="display: inline-block;">
+                                            <asp:Label ID="Label4" runat="server" Text="Location" ForeColor="#D4C19A"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="Label7" runat="server" Text="TARUMT, Jalan Genting Kelang, Setapak" ForeColor="White"></asp:Label>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+            <%--</td>
+                </tr>
+            </table>--%>
+        </div>
+    </form>
+    <script>
+        document.getElementById("<%= getCurrentPage() %>").classList.add("active");
+    </script>
+
+</body>
+</html>
